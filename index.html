@@ -65,6 +65,7 @@
             align-items: center;
             text-transform: uppercase;
             letter-spacing: 1px;
+            cursor: pointer;
         }
         
         .logo i {
@@ -93,6 +94,7 @@
             text-transform: uppercase;
             font-size: 0.9rem;
             letter-spacing: 1px;
+            cursor: pointer;
         }
         
         nav ul li a:hover {
@@ -233,6 +235,7 @@
             transform: rotate(15deg);
             transition: all 0.5s ease;
             filter: saturate(1.2);
+            cursor: pointer;
         }
         
         .floating-book:hover {
@@ -560,6 +563,7 @@
             text-decoration: none;
             transition: all 0.3s ease;
             display: inline-block;
+            cursor: pointer;
         }
         
         .footer-column ul li a:hover {
@@ -583,6 +587,8 @@
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
         }
         
         .social-links a:hover {
@@ -674,6 +680,241 @@
             animation: float 18s infinite ease-in-out reverse;
         }
         
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(13, 2, 33, 0.9);
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: linear-gradient(145deg, #0a0118, #13033a);
+            border-radius: 15px;
+            width: 80%;
+            max-width: 800px;
+            padding: 2rem;
+            box-shadow: 0 0 30px rgba(15, 240, 252, 0.3);
+            border: 1px solid rgba(15, 240, 252, 0.2);
+            position: relative;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            color: var(--neon-blue);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .close-modal:hover {
+            transform: rotate(90deg);
+            color: var(--cyber-pink);
+        }
+        
+        .modal-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, var(--neon-blue), var(--matrix-green));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-transform: uppercase;
+        }
+        
+        /* Shopping Cart Styles */
+        .cart-items {
+            margin-bottom: 2rem;
+        }
+        
+        .cart-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(15, 240, 252, 0.1);
+        }
+        
+        .cart-item-cover {
+            width: 80px;
+            height: 110px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-right: 1.5rem;
+        }
+        
+        .cart-item-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .cart-item-details {
+            flex: 1;
+        }
+        
+        .cart-item-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .cart-item-author {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .cart-item-price {
+            font-weight: 700;
+            color: var(--matrix-green);
+        }
+        
+        .cart-item-remove {
+            color: var(--cyber-pink);
+            cursor: pointer;
+            margin-left: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .cart-item-remove:hover {
+            transform: scale(1.2);
+        }
+        
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(15, 240, 252, 0.3);
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+        
+        .cart-total-price {
+            color: var(--neon-blue);
+        }
+        
+        .cart-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .cart-button {
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+        }
+        
+        .cart-button.checkout {
+            background: linear-gradient(45deg, var(--matrix-green), var(--neon-blue));
+            color: var(--void-black);
+        }
+        
+        .cart-button.continue {
+            background: transparent;
+            color: var(--neon-blue);
+            border: 1px solid var(--neon-blue);
+        }
+        
+        .cart-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(15, 240, 252, 0.4);
+        }
+        
+        /* Category Page Styles */
+        .category-header {
+            padding: 3rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(15, 240, 252, 0.1), transparent);
+            margin-bottom: 3rem;
+        }
+        
+        .category-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--neon-blue), var(--electric-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-transform: uppercase;
+        }
+        
+        /* Category Books Section */
+        .category-books {
+            padding: 3rem 0;
+        }
+        
+        /* Contact Page Styles */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-button {
+            background: linear-gradient(45deg, var(--electric-purple), var(--cyber-pink));
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: 100%;
+        }
+        
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(199, 36, 241, 0.4);
+        }
+        
         @keyframes float {
             0%, 100% {
                 transform: translate(0, 0);
@@ -740,6 +981,11 @@
             .book-grid {
                 grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
             }
+            
+            .modal-content {
+                width: 90%;
+                padding: 1.5rem;
+            }
         }
         
         @media (max-width: 576px) {
@@ -780,6 +1026,20 @@
             .book-cover {
                 height: 300px;
             }
+            
+            .cart-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .cart-item-cover {
+                margin-bottom: 1rem;
+                margin-right: 0;
+            }
+            
+            .cart-actions {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -791,127 +1051,440 @@
     
     <header>
         <div class="container header-content">
-            <div class="logo">
+            <div class="logo" id="homeBtn">
                 <i class="fas fa-atom"></i>
                 <span>NexusBooks</span>
             </div>
             <nav>
                 <ul>
-                    <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="#"><i class="fas fa-tags"></i> Categories</a></li>
-                    <li><a href="#"><i class="fas fa-fire"></i> Bestsellers</a></li>
-                    <li><a href="#"><i class="fas fa-bolt"></i> New Releases</a></li>
-                    <li><a href="#"><i class="fas fa-shopping-cart"></i> Cart <span class="cart-count">0</span></a></li>
+                    <li><a id="homeLink"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a id="categoriesLink"><i class="fas fa-tags"></i> Categories</a></li>
+                    <li><a id="bestsellersLink"><i class="fas fa-fire"></i> Bestsellers</a></li>
+                    <li><a id="newReleasesLink"><i class="fas fa-bolt"></i> New Releases</a></li>
+                    <li><a id="cartLink"><i class="fas fa-shopping-cart"></i> Cart <span class="cart-count">0</span></a></li>
                 </ul>
             </nav>
         </div>
     </header>
     
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Dive Into Digital Dimensions</h1>
-                <p>Explore our curated collection of futuristic reads that will transport your mind to new realities. Instant access, infinite possibilities.</p>
-                <div class="search-bar">
-                    <input type="text" placeholder="Search for quantum knowledge...">
-                    <button><i class="fas fa-search"></i> Explore</button>
+    <!-- Main Content Sections -->
+    <div id="homeSection">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Dive Into Digital Dimensions</h1>
+                    <p>Explore our curated collection of futuristic reads that will transport your mind to new realities. Instant access, infinite possibilities.</p>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search for quantum knowledge..." id="searchInput">
+                        <button id="searchBtn"><i class="fas fa-search"></i> Explore</button>
+                    </div>
                 </div>
             </div>
-        </div>
+            
+            <div class="floating-books">
+                <div class="floating-book" style="background-image: url('https://m.media-amazon.com/images/I/71X1p4TGlxL._AC_UF1000,1000_QL80_.jpg');" id="floatingBook1"></div>
+                <div class="floating-book" style="background-image: url('https://m.media-amazon.com/images/I/81cpDaCJJCL._AC_UF1000,1000_QL80_.jpg');" id="floatingBook2"></div>
+                <div class="floating-book" style="background-image: url('https://m.media-amazon.com/images/I/81bsw6fnUiL._AC_UF1000,1000_QL80_.jpg');" id="floatingBook3"></div>
+            </div>
+        </section>
         
-        <div class="floating-books">
-            <div class="floating-book" style="background-image: url('https://m.media-amazon.com/images/I/71X1p4TGlxL._AC_UF1000,1000_QL80_.jpg');"></div>
-            <div class="floating-book" style="background-image: url('https://m.media-amazon.com/images/I/81cpDaCJJCL._AC_UF1000,1000_QL80_.jpg');"></div>
-            <div class="floating-book" style="background-image: url('https://m.media-amazon.com/images/I/81bsw6fnUiL._AC_UF1000,1000_QL80_.jpg');"></div>
-        </div>
-    </section>
-    
-    <section class="categories">
-        <div class="container">
-            <h2 class="section-title">Knowledge Dimensions</h2>
-            <div class="category-list">
-                <div class="category-card">
-                    <i class="fas fa-brain"></i>
-                    <h3>Neuro Science</h3>
-                </div>
-                <div class="category-card">
-                    <i class="fas fa-rocket"></i>
-                    <h3>Quantum Physics</h3>
-                </div>
-                <div class="category-card">
-                    <i class="fas fa-dna"></i>
-                    <h3>Bio Tech</h3>
-                </div>
-                <div class="category-card">
-                    <i class="fas fa-robot"></i>
-                    <h3>AI Futures</h3>
-                </div>
-                <div class="category-card">
-                    <i class="fas fa-globe"></i>
-                    <h3>Cyber Culture</h3>
-                </div>
-                <div class="category-card">
-                    <i class="fas fa-chart-network"></i>
-                    <h3>Data Realms</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="featured-books">
-        <div class="container">
-            <h2 class="section-title">Holographic Picks</h2>
-            <div class="book-grid">
-                <div class="book-card">
-                    <div class="book-cover">
-                        <img src="https://m.media-amazon.com/images/I/81bsw6fnUiL._AC_UF1000,1000_QL80_.jpg" alt="The Silent Patient">
+        <section class="categories">
+            <div class="container">
+                <h2 class="section-title">Knowledge Dimensions</h2>
+                <div class="category-list">
+                    <div class="category-card" data-category="neuroscience">
+                        <i class="fas fa-brain"></i>
+                        <h3>Neuro Science</h3>
                     </div>
-                    <div class="book-info">
-                        <h3 class="book-title">The Silent Patient</h3>
-                        <p class="book-author">By Alex Michaelides</p>
-                        <span class="book-price">$12.99</span>
-                        <button class="add-to-cart"><i class="fas fa-plus"></i> Add to Neural Cart</button>
+                    <div class="category-card" data-category="quantum">
+                        <i class="fas fa-rocket"></i>
+                        <h3>Quantum Physics</h3>
                     </div>
-                </div>
-                
-                <div class="book-card">
-                    <div class="book-cover">
-                        <img src="https://m.media-amazon.com/images/I/81cpDaCJJCL._AC_UF1000,1000_QL80_.jpg" alt="The Creative Act: A Way of Being">
+                    <div class="category-card" data-category="biotech">
+                        <i class="fas fa-dna"></i>
+                        <h3>Bio Tech</h3>
                     </div>
-                    <div class="book-info">
-                        <h3 class="book-title">The Creative Act</h3>
-                        <p class="book-author">By Rick Rubin</p>
-                        <span class="book-price">$16.99</span>
-                        <button class="add-to-cart"><i class="fas fa-plus"></i> Add to Neural Cart</button>
+                    <div class="category-card" data-category="ai">
+                        <i class="fas fa-robot"></i>
+                        <h3>AI Futures</h3>
                     </div>
-                </div>
-                
-                <div class="book-card">
-                    <div class="book-cover">
-                        <img src="https://m.media-amazon.com/images/I/71X1p4TGlxL._AC_UF1000,1000_QL80_.jpg" alt="The Midnight Library">
+                    <div class="category-card" data-category="cyber">
+                        <i class="fas fa-globe"></i>
+                        <h3>Cyber Culture</h3>
                     </div>
-                    <div class="book-info">
-                        <h3 class="book-title">The Midnight Library</h3>
-                        <p class="book-author">By Matt Haig</p>
-                        <span class="book-price">$10.99</span>
-                        <button class="add-to-cart"><i class="fas fa-plus"></i> Add to Neural Cart</button>
-                    </div>
-                </div>
-                
-                <div class="book-card">
-                    <div class="book-cover">
-                        <img src="https://m.media-amazon.com/images/I/81WZ6QvGZ2L._AC_UF1000,1000_QL80_.jpg" alt="Educated">
-                    </div>
-                    <div class="book-info">
-                        <h3 class="book-title">Educated</h3>
-                        <p class="book-author">By Tara Westover</p>
-                        <span class="book-price">$13.99</span>
-                        <button class="add-to-cart"><i class="fas fa-plus"></i> Add to Neural Cart</button>
+                    <div class="category-card" data-category="data">
+                        <i class="fas fa-chart-network"></i>
+                        <h3>Data Realms</h3>
                     </div>
                 </div>
             </div>
+        </section>
+        
+        <section class="featured-books">
+            <div class="container">
+                <h2 class="section-title">Holographic Picks</h2>
+                <div class="book-grid">
+                    <div class="book-card">
+                        <div class="book-cover">
+                            <img src="https://m.media-amazon.com/images/I/81bsw6fnUiL._AC_UF1000,1000_QL80_.jpg" alt="The Silent Patient">
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title">The Silent Patient</h3>
+                            <p class="book-author">By Alex Michaelides</p>
+                            <span class="book-price">$12.99</span>
+                            <button class="add-to-cart" data-id="1" data-title="The Silent Patient" data-author="Alex Michaelides" data-price="12.99" data-image="https://m.media-amazon.com/images/I/81bsw6fnUiL._AC_UF1000,1000_QL80_.jpg"><i class="fas fa-plus"></i> Add to Neural Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="book-card">
+                        <div class="book-cover">
+                            <img src="https://m.media-amazon.com/images/I/81cpDaCJJCL._AC_UF1000,1000_QL80_.jpg" alt="The Creative Act: A Way of Being">
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title">The Creative Act</h3>
+                            <p class="book-author">By Rick Rubin</p>
+                            <span class="book-price">$16.99</span>
+                            <button class="add-to-cart" data-id="2" data-title="The Creative Act" data-author="Rick Rubin" data-price="16.99" data-image="https://m.media-amazon.com/images/I/81cpDaCJJCL._AC_UF1000,1000_QL80_.jpg"><i class="fas fa-plus"></i> Add to Neural Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="book-card">
+                        <div class="book-cover">
+                            <img src="https://m.media-amazon.com/images/I/71X1p4TGlxL._AC_UF1000,1000_QL80_.jpg" alt="The Midnight Library">
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title">The Midnight Library</h3>
+                            <p class="book-author">By Matt Haig</p>
+                            <span class="book-price">$10.99</span>
+                            <button class="add-to-cart" data-id="3" data-title="The Midnight Library" data-author="Matt Haig" data-price="10.99" data-image="https://m.media-amazon.com/images/I/71X1p4TGlxL._AC_UF1000,1000_QL80_.jpg"><i class="fas fa-plus"></i> Add to Neural Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="book-card">
+                        <div class="book-cover">
+                            <img src="https://m.media-amazon.com/images/I/81WZ6QvGZ2L._AC_UF1000,1000_QL80_.jpg" alt="Educated">
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title">Educated</h3>
+                            <p class="book-author">By Tara Westover</p>
+                            <span class="book-price">$13.99</span>
+                            <button class="add-to-cart" data-id="4" data-title="Educated" data-author="Tara Westover" data-price="13.99" data-image="https://m.media-amazon.com/images/I/81WZ6QvGZ2L._AC_UF1000,1000_QL80_.jpg"><i class="fas fa-plus"></i> Add to Neural Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Categories Section (Hidden by default) -->
+    <div id="categoriesSection" style="display: none;">
+        <section class="category-header">
+            <div class="container">
+                <h1 class="category-title">All Knowledge Dimensions</h1>
+                <p>Browse through our quantum library of categories</p>
+            </div>
+        </section>
+        
+        <section class="categories">
+            <div class="container">
+                <div class="category-list">
+                    <div class="category-card" data-category="neuroscience">
+                        <i class="fas fa-brain"></i>
+                        <h3>Neuro Science</h3>
+                        <p>125 books</p>
+                    </div>
+                    <div class="category-card" data-category="quantum">
+                        <i class="fas fa-rocket"></i>
+                        <h3>Quantum Physics</h3>
+                        <p>89 books</p>
+                    </div>
+                    <div class="category-card" data-category="biotech">
+                        <i class="fas fa-dna"></i>
+                        <h3>Bio Tech</h3>
+                        <p>76 books</p>
+                    </div>
+                    <div class="category-card" data-category="ai">
+                        <i class="fas fa-robot"></i>
+                        <h3>AI Futures</h3>
+                        <p>142 books</p>
+                    </div>
+                    <div class="category-card" data-category="cyber">
+                        <i class="fas fa-globe"></i>
+                        <h3>Cyber Culture</h3>
+                        <p>98 books</p>
+                    </div>
+                    <div class="category-card" data-category="data">
+                        <i class="fas fa-chart-network"></i>
+                        <h3>Data Realms</h3>
+                        <p>113 books</p>
+                    </div>
+                    <div class="category-card" data-category="physics">
+                        <i class="fas fa-atom"></i>
+                        <h3>Physics</h3>
+                        <p>67 books</p>
+                    </div>
+                    <div class="category-card" data-category="programming">
+                        <i class="fas fa-code"></i>
+                        <h3>Programming</h3>
+                        <p>154 books</p>
+                    </div>
+                    <div class="category-card" data-category="tech">
+                        <i class="fas fa-microchip"></i>
+                        <h3>Emerging Tech</h3>
+                        <p>82 books</p>
+                    </div>
+                    <div class="category-card" data-category="vr">
+                        <i class="fas fa-vr-cardboard"></i>
+                        <h3>Virtual Reality</h3>
+                        <p>45 books</p>
+                    </div>
+                    <div class="category-card" data-category="security">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Cyber Security</h3>
+                        <p>91 books</p>
+                    </div>
+                    <div class="category-card" data-category="systems">
+                        <i class="fas fa-project-diagram"></i>
+                        <h3>Complex Systems</h3>
+                        <p>57 books</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Category Books Section (Hidden by default) -->
+    <div id="categoryBooksSection" style="display: none;">
+        <section class="category-header">
+            <div class="container">
+                <h1 class="category-title" id="categoryBooksTitle">Category Books</h1>
+                <p id="categoryBooksDescription">Books in this knowledge dimension</p>
+            </div>
+        </section>
+        
+        <section class="category-books">
+            <div class="container">
+                <div class="book-grid" id="categoryBooksGrid">
+                    <!-- Books will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Bestsellers Section (Hidden by default) -->
+    <div id="bestsellersSection" style="display: none;">
+        <section class="category-header">
+            <div class="container">
+                <h1 class="category-title">Quantum Bestsellers</h1>
+                <p>Most downloaded knowledge packages this cycle</p>
+            </div>
+        </section>
+        
+        <section class="featured-books">
+            <div class="container">
+                <div class="book-grid">
+                    <div class="book-card">
+                        <div class="book-cover">
+                            <img src="https://m.media-amazon.com/images/I/71X1p4TGlxL._AC_UF1000,1000_QL80_.jpg" alt="The Midnight Library">
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title">The Midnight Library</h3>
+                            <p class="book-author">By Matt Haig</p>
+                            <span class="book-price">$10.99</span>
+                            <button class="add-to-cart" data-id="3" data-title="The Midnight Library" data-author="Matt Haig" data-price="10.99" data-image="https://m.media-amazon.com/images/I/71X1p4TGlxL._AC_UF1000,1000_QL80_.jpg"><i class="fas fa-plus"></i> Add to Neural Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="book-card">
+                        <div class="book-cover">
+                            <img src="https://m.media-amazon.com/images/I/81cpDaCJJCL._AC_UF1000,1000_QL80_.jpg" alt="The Creative Act: A Way of Being">
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title">The Creative Act</h3>
+                            <p class="book-author">By Rick Rubin</p>
+                            <span class="book-price">$16.99</span>
+                            <button class="add-to-cart" data-id="2" data-title="The Creative Act" data-author="Rick Rubin" data-price="16.99" data-image="https://m.media-amazon.com/images/I/81cpDaCJJCL._AC_UF1000,1000_QL80_.jpg"><i class="fas fa-plus"></i> Add to Neural Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="book-card">
+                        <div class="book-cover">
+                            <img src="https://m.media-amazon.com/images/I/81bsw6fnUiL._AC_UF1000,1000_QL80_.jpg" alt="The Silent Patient">
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title">The Silent Patient</h3>
+                            <p class="book-author">By Alex Michaelides</p>
+                            <span class="book-price">$12.99</span>
+                            <button class="add-to-cart" data-id="1" data-title="The Silent Patient" data-author="Alex Michaelides" data-price="12.99" data-image="https://m.media-amazon.com/images/I/81bsw6fnUiL._AC_UF1000,1000_QL80_.jpg"><i class="fas fa-plus"></i> Add to Neural Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="book-card">
+                        <div class="book-cover">
+                            <img src="https://m.media-amazon.com/images/I/81WZ6QvGZ2L._AC_UF1000,1000_QL80_.jpg" alt="Educated">
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title">Educated</h3>
+                            <p class="book-author">By Tara Westover</p>
+                            <span class="book-price">$13.99</span>
+                            <button class="add-to-cart" data-id="4" data-title="Educated" data-author="Tara Westover" data-price="13.99" data-image="https://m.media-amazon.com/images/I/81WZ6QvGZ2L._AC_UF1000,1000_QL80_.jpg"><i class="fas fa-plus"></i> Add to Neural Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="book-card">
+                        <div class="book-cover">
+                            <img src="https://m.media-amazon.com/images/I/81dQwQlmAXL._AC_UF1000,1000_QL80_.jpg" alt="The Psychology of Money">
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title">The Psychology of Money</h3>
+                            <p class="book-author">By Morgan Housel</p>
+                            <span class="book-price">$14.99</span>
+                            <button class="add-to-cart" data-id="5" data-title="The Psychology of Money" data-author="Morgan Housel" data-price="14.99" data-image="https://m.media-amazon.com/images/I/81dQwQlmAXL._AC_UF1000,1000_QL80_.jpg"><i class="fas fa-plus"></i> Add to Neural Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="book-card">
+                        <div class="book-cover">
+                            <img src="https://m.media-amazon.com/images/I/71QKQ9mwV7L._AC_UF1000,1000_QL80_.jpg" alt="The Alchemist">
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title">The Alchemist</h3>
+                            <p class="book-author">By Paulo Coelho</p>
+                            <span class="book-price">$9.99</span>
+                            <button class="add-to-cart" data-id="6" data-title="The Alchemist" data-author="Paulo Coelho" data-price="9.99" data-image="https://m.media-amazon.com/images/I/71QKQ9mwV7L._AC_UF1000,1000_QL80_.jpg"><i class="fas fa-plus"></i> Add to Neural Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- New Releases Section (Hidden by default) -->
+    <div id="newReleasesSection" style="display: none;">
+        <section class="category-header">
+            <div class="container">
+                <h1 class="category-title">New Knowledge Releases</h1>
+                <p>Freshly uploaded to the neural network</p>
+            </div>
+        </section>
+        
+        <section class="featured-books">
+            <div class="container">
+                <div class="book-grid">
+                    <div class="book-card">
+                        <div class="book-cover">
+                            <img src="https://m.media-amazon.com/images/I/81cpDaCJJCL._AC_UF1000,1000_QL80_.jpg" alt="The Creative Act: A Way of Being">
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title">The Creative Act</h3>
+                            <p class="book-author">By Rick Rubin</p>
+                            <span class="book-price">$16.99</span>
+                            <button class="add-to-cart" data-id="2" data-title="The Creative Act" data-author="Rick Rubin" data-price="16.99" data-image="https://m.media-amazon.com/images/I/81cpDaCJJCL._AC_UF1000,1000_QL80_.jpg"><i class="fas fa-plus"></i> Add to Neural Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="book-card">
+                        <div class="book-cover">
+                            <img src="https://m.media-amazon.com/images/I/91n7pp7qcVL._AC_UF1000,1000_QL80_.jpg" alt="Atomic Habits">
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title">Atomic Habits</h3>
+                            <p class="book-author">By James Clear</p>
+                            <span class="book-price">$14.99</span>
+                            <button class="add-to-cart" data-id="7" data-title="Atomic Habits" data-author="James Clear" data-price="14.99" data-image="https://m.media-amazon.com/images/I/91n7pp7qcVL._AC_UF1000,1000_QL80_.jpg"><i class="fas fa-plus"></i> Add to Neural Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="book-card">
+                        <div class="book-cover">
+                            <img src="https://m.media-amazon.com/images/I/81dQwQlmAXL._AC_UF1000,1000_QL80_.jpg" alt="The Psychology of Money">
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title">The Psychology of Money</h3>
+                            <p class="book-author">By Morgan Housel</p>
+                            <span class="book-price">$14.99</span>
+                            <button class="add-to-cart" data-id="5" data-title="The Psychology of Money" data-author="Morgan Housel" data-price="14.99" data-image="https://m.media-amazon.com/images/I/81dQwQlmAXL._AC_UF1000,1000_QL80_.jpg"><i class="fas fa-plus"></i> Add to Neural Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="book-card">
+                        <div class="book-cover">
+                            <img src="https://m.media-amazon.com/images/I/71X1p4TGlxL._AC_UF1000,1000_QL80_.jpg" alt="The Midnight Library">
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title">The Midnight Library</h3>
+                            <p class="book-author">By Matt Haig</p>
+                            <span class="book-price">$10.99</span>
+                            <button class="add-to-cart" data-id="3" data-title="The Midnight Library" data-author="Matt Haig" data-price="10.99" data-image="https://m.media-amazon.com/images/I/71X1p4TGlxL._AC_UF1000,1000_QL80_.jpg"><i class="fas fa-plus"></i> Add to Neural Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Contact Section (Hidden by default) -->
+    <div id="contactSection" style="display: none;">
+        <section class="category-header">
+            <div class="container">
+                <h1 class="category-title">Neural Contact</h1>
+                <p>Connect with our quantum support team</p>
+            </div>
+        </section>
+        
+        <section class="featured-books" style="padding-bottom: 5rem;">
+            <div class="container">
+                <div class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Your Neural Signature</label>
+                        <input type="text" id="name" placeholder="Enter your name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Quantum Communication Channel</label>
+                        <input type="email" id="email" placeholder="Enter your email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Transmission Subject</label>
+                        <input type="text" id="subject" placeholder="Enter subject">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" placeholder="Enter your quantum message"></textarea>
+                    </div>
+                    
+                    <button class="submit-button" id="sendMessageBtn">
+                        <i class="fas fa-paper-plane"></i> Transmit Message
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Shopping Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeCartModal">&times;</span>
+            <h2 class="modal-title">Neural Cart</h2>
+            
+            <div class="cart-items" id="cartItemsContainer">
+                <!-- Cart items will be dynamically inserted here -->
+                <p class="empty-cart-message">Your neural cart is currently empty.</p>
+            </div>
+            
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="cart-total-price" id="cartTotal">$0.00</span>
+            </div>
+            
+            <div class="cart-actions">
+                <button class="cart-button continue" id="continueShoppingBtn">Continue Exploring</button>
+                <button class="cart-button checkout" id="checkoutBtn">Proceed to Quantum Checkout</button>
+            </div>
         </div>
-    </section>
+    </div>
     
     <footer>
         <div class="container">
@@ -929,11 +1502,11 @@
                 <div class="footer-column">
                     <h3>Quantum Links</h3>
                     <ul>
-                        <li><a href="#">Wormhole Home</a></li>
-                        <li><a href="#">Neural Network</a></li>
-                        <li><a href="#">Temporal Archives</a></li>
-                        <li><a href="#">Holographic Support</a></li>
-                        <li><a href="#">Dimensional Portal</a></li>
+                        <li><a id="footerHomeLink">Wormhole Home</a></li>
+                        <li><a id="footerCategoriesLink">Neural Network</a></li>
+                        <li><a id="footerBestsellersLink">Temporal Archives</a></li>
+                        <li><a id="footerContactLink">Holographic Support</a></li>
+                        <li><a id="footerCartLink">Dimensional Portal</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -949,8 +1522,8 @@
                 <div class="footer-column">
                     <h3>Neural Network</h3>
                     <p>Join our quantum newsletter for interdimensional updates.</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Your neuro-email">
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Your neuro-email" required>
                         <button type="submit">Subscribe</button>
                     </form>
                 </div>
@@ -963,31 +1536,296 @@
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Add to cart animation
-            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            // Cart functionality
+            let cart = [];
             const cartCount = document.querySelector('.cart-count');
+            const cartModal = document.getElementById('cartModal');
+            const cartItemsContainer = document.getElementById('cartItemsContainer');
+            const cartTotal = document.getElementById('cartTotal');
+            const closeCartModal = document.getElementById('closeCartModal');
+            const continueShoppingBtn = document.getElementById('continueShoppingBtn');
+            const checkoutBtn = document.getElementById('checkoutBtn');
             
-            addToCartButtons.forEach(button => {
+            // Navigation functionality
+            const homeBtn = document.getElementById('homeBtn');
+            const homeLink = document.getElementById('homeLink');
+            const homeSection = document.getElementById('homeSection');
+            
+            const categoriesLink = document.getElementById('categoriesLink');
+            const categoriesSection = document.getElementById('categoriesSection');
+            
+            const bestsellersLink = document.getElementById('bestsellersLink');
+            const bestsellersSection = document.getElementById('bestsellersSection');
+            
+            const newReleasesLink = document.getElementById('newReleasesLink');
+            const newReleasesSection = document.getElementById('newReleasesSection');
+            
+            const contactLink = document.getElementById('contactLink');
+            const contactSection = document.getElementById('contactSection');
+            
+            const cartLink = document.getElementById('cartLink');
+            
+            // Category books section
+            const categoryBooksSection = document.getElementById('categoryBooksSection');
+            const categoryBooksTitle = document.getElementById('categoryBooksTitle');
+            const categoryBooksDescription = document.getElementById('categoryBooksDescription');
+            const categoryBooksGrid = document.getElementById('categoryBooksGrid');
+            
+            // Footer navigation
+            const footerHomeLink = document.getElementById('footerHomeLink');
+            const footerCategoriesLink = document.getElementById('footerCategoriesLink');
+            const footerBestsellersLink = document.getElementById('footerBestsellersLink');
+            const footerContactLink = document.getElementById('footerContactLink');
+            const footerCartLink = document.getElementById('footerCartLink');
+            
+            // Search functionality
+            const searchInput = document.getElementById('searchInput');
+            const searchBtn = document.getElementById('searchBtn');
+            
+            // Newsletter form
+            const newsletterForm = document.getElementById('newsletterForm');
+            
+            // Contact form
+            const sendMessageBtn = document.getElementById('sendMessageBtn');
+            
+            // Floating books
+            const floatingBook1 = document.getElementById('floatingBook1');
+            const floatingBook2 = document.getElementById('floatingBook2');
+            const floatingBook3 = document.getElementById('floatingBook3');
+            
+            // Category data
+            const categories = {
+                neuroscience: {
+                    title: "Neuro Science",
+                    description: "Explore the quantum mysteries of the human mind",
+                    books: [
+                        {
+                            id: "n1",
+                            title: "The Brain That Changes Itself",
+                            author: "Norman Doidge",
+                            price: 14.99,
+                            image: "https://m.media-amazon.com/images/I/71Qis5a5o8L._AC_UF1000,1000_QL80_.jpg"
+                        },
+                        {
+                            id: "n2",
+                            title: "Behave",
+                            author: "Robert Sapolsky",
+                            price: 18.99,
+                            image: "https://m.media-amazon.com/images/I/81SOc1J4E5L._AC_UF1000,1000_QL80_.jpg"
+                        },
+                        {
+                            id: "n3",
+                            title: "The Tell-Tale Brain",
+                            author: "V.S. Ramachandran",
+                            price: 12.99,
+                            image: "https://m.media-amazon.com/images/I/81lG+ZQ+5VL._AC_UF1000,1000_QL80_.jpg"
+                        }
+                    ]
+                },
+                quantum: {
+                    title: "Quantum Physics",
+                    description: "Journey through the fabric of reality",
+                    books: [
+                        {
+                            id: "q1",
+                            title: "Quantum Mechanics: The Theoretical Minimum",
+                            author: "Leonard Susskind",
+                            price: 16.99,
+                            image: "https://m.media-amazon.com/images/I/71Qis5a5o8L._AC_UF1000,1000_QL80_.jpg"
+                        },
+                        {
+                            id: "q2",
+                            title: "The Quantum Universe",
+                            author: "Brian Cox",
+                            price: 15.99,
+                            image: "https://m.media-amazon.com/images/I/81SOc1J4E5L._AC_UF1000,1000_QL80_.jpg"
+                        }
+                    ]
+                },
+                biotech: {
+                    title: "Bio Tech",
+                    description: "The frontier of biological innovation",
+                    books: [
+                        {
+                            id: "b1",
+                            title: "The Gene: An Intimate History",
+                            author: "Siddhartha Mukherjee",
+                            price: 17.99,
+                            image: "https://m.media-amazon.com/images/I/81lG+ZQ+5VL._AC_UF1000,1000_QL80_.jpg"
+                        }
+                    ]
+                },
+                ai: {
+                    title: "AI Futures",
+                    description: "The rise of machine consciousness",
+                    books: [
+                        {
+                            id: "a1",
+                            title: "Life 3.0",
+                            author: "Max Tegmark",
+                            price: 14.99,
+                            image: "https://m.media-amazon.com/images/I/71Qis5a5o8L._AC_UF1000,1000_QL80_.jpg"
+                        },
+                        {
+                            id: "a2",
+                            title: "Superintelligence",
+                            author: "Nick Bostrom",
+                            price: 16.99,
+                            image: "https://m.media-amazon.com/images/I/81SOc1J4E5L._AC_UF1000,1000_QL80_.jpg"
+                        }
+                    ]
+                },
+                cyber: {
+                    title: "Cyber Culture",
+                    description: "Digital societies and virtual worlds",
+                    books: [
+                        {
+                            id: "c1",
+                            title: "Neuromancer",
+                            author: "William Gibson",
+                            price: 10.99,
+                            image: "https://m.media-amazon.com/images/I/81lG+ZQ+5VL._AC_UF1000,1000_QL80_.jpg"
+                        }
+                    ]
+                },
+                data: {
+                    title: "Data Realms",
+                    description: "The mathematics of information",
+                    books: [
+                        {
+                            id: "d1",
+                            title: "The Signal and the Noise",
+                            author: "Nate Silver",
+                            price: 13.99,
+                            image: "https://m.media-amazon.com/images/I/71Qis5a5o8L._AC_UF1000,1000_QL80_.jpg"
+                        }
+                    ]
+                },
+                physics: {
+                    title: "Physics",
+                    description: "Fundamental laws of the universe",
+                    books: [
+                        {
+                            id: "p1",
+                            title: "The Elegant Universe",
+                            author: "Brian Greene",
+                            price: 15.99,
+                            image: "https://m.media-amazon.com/images/I/81SOc1J4E5L._AC_UF1000,1000_QL80_.jpg"
+                        }
+                    ]
+                },
+                programming: {
+                    title: "Programming",
+                    description: "Code that shapes reality",
+                    books: [
+                        {
+                            id: "pr1",
+                            title: "Clean Code",
+                            author: "Robert C. Martin",
+                            price: 12.99,
+                            image: "https://m.media-amazon.com/images/I/81lG+ZQ+5VL._AC_UF1000,1000_QL80_.jpg"
+                        }
+                    ]
+                },
+                tech: {
+                    title: "Emerging Tech",
+                    description: "Technologies of tomorrow",
+                    books: [
+                        {
+                            id: "t1",
+                            title: "The Singularity Is Near",
+                            author: "Ray Kurzweil",
+                            price: 14.99,
+                            image: "https://m.media-amazon.com/images/I/71Qis5a5o8L._AC_UF1000,1000_QL80_.jpg"
+                        }
+                    ]
+                },
+                vr: {
+                    title: "Virtual Reality",
+                    description: "Alternate dimensions created by code",
+                    books: [
+                        {
+                            id: "v1",
+                            title: "Ready Player One",
+                            author: "Ernest Cline",
+                            price: 9.99,
+                            image: "https://m.media-amazon.com/images/I/81SOc1J4E5L._AC_UF1000,1000_QL80_.jpg"
+                        }
+                    ]
+                },
+                security: {
+                    title: "Cyber Security",
+                    description: "Defending digital frontiers",
+                    books: [
+                        {
+                            id: "s1",
+                            title: "Sandworm",
+                            author: "Andy Greenberg",
+                            price: 16.99,
+                            image: "https://m.media-amazon.com/images/I/81lG+ZQ+5VL._AC_UF1000,1000_QL80_.jpg"
+                        }
+                    ]
+                },
+                systems: {
+                    title: "Complex Systems",
+                    description: "Understanding interconnectedness",
+                    books: [
+                        {
+                            id: "sy1",
+                            title: "Thinking in Systems",
+                            author: "Donella Meadows",
+                            price: 11.99,
+                            image: "https://m.media-amazon.com/images/I/71Qis5a5o8L._AC_UF1000,1000_QL80_.jpg"
+                        }
+                    ]
+                }
+            };
+            
+            // Initialize page
+            showSection(homeSection);
+            
+            // Navigation event listeners
+            homeBtn.addEventListener('click', () => showSection(homeSection));
+            homeLink.addEventListener('click', () => showSection(homeSection));
+            footerHomeLink.addEventListener('click', () => showSection(homeSection));
+            
+            categoriesLink.addEventListener('click', () => showSection(categoriesSection));
+            footerCategoriesLink.addEventListener('click', () => showSection(categoriesSection));
+            
+            bestsellersLink.addEventListener('click', () => showSection(bestsellersSection));
+            footerBestsellersLink.addEventListener('click', () => showSection(bestsellersSection));
+            
+            newReleasesLink.addEventListener('click', () => showSection(newReleasesSection));
+            
+            footerContactLink.addEventListener('click', () => showSection(contactSection));
+            
+            cartLink.addEventListener('click', openCartModal);
+            footerCartLink.addEventListener('click', openCartModal);
+            
+            // Category card click handlers
+            document.querySelectorAll('.category-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    showCategoryBooks(category);
+                });
+            });
+            
+            // Add to cart functionality
+            document.querySelectorAll('.add-to-cart').forEach(button => {
                 button.addEventListener('click', function() {
-                    // Store original content
-                    const originalHTML = this.innerHTML;
+                    const id = this.getAttribute('data-id');
+                    const title = this.getAttribute('data-title');
+                    const author = this.getAttribute('data-author');
+                    const price = parseFloat(this.getAttribute('data-price'));
+                    const image = this.getAttribute('data-image');
+                    
+                    addToCart(id, title, author, price, image);
                     
                     // Animation
+                    const originalHTML = this.innerHTML;
                     this.innerHTML = '<i class="fas fa-check"></i> Added to Neural Storage';
                     this.style.background = 'linear-gradient(45deg, var(--matrix-green), var(--neon-blue))';
                     
-                    // Update cart count
-                    let count = parseInt(cartCount.textContent) || 0;
-                    count++;
-                    cartCount.textContent = count;
-                    
-                    // Pulsate cart count
-                    cartCount.style.transform = 'scale(1.3)';
-                    setTimeout(() => {
-                        cartCount.style.transform = 'scale(1)';
-                    }, 300);
-                    
-                    // Reset button after delay
                     setTimeout(() => {
                         this.innerHTML = originalHTML;
                         this.style.background = 'linear-gradient(45deg, var(--electric-purple), var(--cyber-pink))';
@@ -995,23 +1833,264 @@
                 });
             });
             
-            // Floating books animation
-            const floatingBooks = document.querySelectorAll('.floating-book');
-            floatingBooks.forEach((book, index) => {
-                // Staggered animation
-                book.style.animation = `float ${8 + index * 2}s infinite ease-in-out ${index * 0.5}s`;
+            // Cart modal functionality
+            closeCartModal.addEventListener('click', closeCartModalFunc);
+            continueShoppingBtn.addEventListener('click', closeCartModalFunc);
+            checkoutBtn.addEventListener('click', checkout);
+            
+            // Search functionality
+            searchBtn.addEventListener('click', searchBooks);
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    searchBooks();
+                }
             });
+            
+            // Newsletter form
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input').value;
+                alert(`Thank you for subscribing to our quantum newsletter!\nWe've sent a confirmation to ${email}`);
+                this.reset();
+            });
+            
+            // Contact form
+            sendMessageBtn.addEventListener('click', function() {
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+                
+                if (name && email && subject && message) {
+                    alert(`Message transmitted successfully!\n\nOur quantum support team will respond to ${email} soon.`);
+                    document.getElementById('name').value = '';
+                    document.getElementById('email').value = '';
+                    document.getElementById('subject').value = '';
+                    document.getElementById('message').value = '';
+                } else {
+                    alert('Please fill all quantum communication fields');
+                }
+            });
+            
+            // Floating books interaction
+            [floatingBook1, floatingBook2, floatingBook3].forEach((book, index) => {
+                book.addEventListener('click', function() {
+                    const bookTitles = [
+                        "The Midnight Library",
+                        "The Creative Act: A Way of Being",
+                        "The Silent Patient"
+                    ];
+                    alert(`You selected: ${bookTitles[index]}\n\nThis book will be added to your neural cart`);
+                });
+            });
+            
+            // Helper functions
+            function showSection(section) {
+                // Hide all sections
+                [homeSection, categoriesSection, bestsellersSection, newReleasesSection, contactSection, categoryBooksSection].forEach(sec => {
+                    sec.style.display = 'none';
+                });
+                
+                // Show selected section
+                section.style.display = 'block';
+                
+                // Scroll to top
+                window.scrollTo(0, 0);
+            }
+            
+            function showCategoryBooks(category) {
+                const categoryData = categories[category];
+                if (!categoryData) return;
+                
+                // Update category title and description
+                categoryBooksTitle.textContent = categoryData.title;
+                categoryBooksDescription.textContent = categoryData.description;
+                
+                // Clear previous books
+                categoryBooksGrid.innerHTML = '';
+                
+                // Add books to the grid
+                categoryData.books.forEach(book => {
+                    const bookHTML = `
+                        <div class="book-card">
+                            <div class="book-cover">
+                                <img src="${book.image}" alt="${book.title}">
+                            </div>
+                            <div class="book-info">
+                                <h3 class="book-title">${book.title}</h3>
+                                <p class="book-author">By ${book.author}</p>
+                                <span class="book-price">$${book.price.toFixed(2)}</span>
+                                <button class="add-to-cart" data-id="${book.id}" data-title="${book.title}" data-author="${book.author}" data-price="${book.price}" data-image="${book.image}">
+                                    <i class="fas fa-plus"></i> Add to Neural Cart
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    categoryBooksGrid.insertAdjacentHTML('beforeend', bookHTML);
+                });
+                
+                // Add event listeners to new add-to-cart buttons
+                document.querySelectorAll('#categoryBooksGrid .add-to-cart').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const id = this.getAttribute('data-id');
+                        const title = this.getAttribute('data-title');
+                        const author = this.getAttribute('data-author');
+                        const price = parseFloat(this.getAttribute('data-price'));
+                        const image = this.getAttribute('data-image');
+                        
+                        addToCart(id, title, author, price, image);
+                        
+                        // Animation
+                        const originalHTML = this.innerHTML;
+                        this.innerHTML = '<i class="fas fa-check"></i> Added to Neural Storage';
+                        this.style.background = 'linear-gradient(45deg, var(--matrix-green), var(--neon-blue))';
+                        
+                        setTimeout(() => {
+                            this.innerHTML = originalHTML;
+                            this.style.background = 'linear-gradient(45deg, var(--electric-purple), var(--cyber-pink))';
+                        }, 2000);
+                    });
+                });
+                
+                // Show the category books section
+                showSection(categoryBooksSection);
+            }
+            
+            function addToCart(id, title, author, price, image) {
+                // Check if item already in cart
+                const existingItem = cart.find(item => item.id === id);
+                
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({
+                        id,
+                        title,
+                        author,
+                        price,
+                        image,
+                        quantity: 1
+                    });
+                }
+                
+                updateCartCount();
+            }
+            
+            function updateCartCount() {
+                const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+                cartCount.textContent = totalItems;
+                
+                // Pulsate cart count
+                cartCount.style.transform = 'scale(1.3)';
+                setTimeout(() => {
+                    cartCount.style.transform = 'scale(1)';
+                }, 300);
+            }
+            
+            function openCartModal() {
+                cartModal.style.display = 'flex';
+                renderCartItems();
+            }
+            
+            function closeCartModalFunc() {
+                cartModal.style.display = 'none';
+            }
+            
+            function renderCartItems() {
+                if (cart.length === 0) {
+                    cartItemsContainer.innerHTML = '<p class="empty-cart-message">Your neural cart is currently empty.</p>';
+                    cartTotal.textContent = '$0.00';
+                    return;
+                }
+                
+                let itemsHTML = '';
+                let total = 0;
+                
+                cart.forEach(item => {
+                    total += item.price * item.quantity;
+                    
+                    itemsHTML += `
+                        <div class="cart-item" data-id="${item.id}">
+                            <div class="cart-item-cover">
+                                <img src="${item.image}" alt="${item.title}">
+                            </div>
+                            <div class="cart-item-details">
+                                <h4 class="cart-item-title">${item.title}</h4>
+                                <p class="cart-item-author">By ${item.author}</p>
+                                <div style="display: flex; align-items: center;">
+                                    <span class="cart-item-price">$${(item.price * item.quantity).toFixed(2)}</span>
+                                    <span style="margin: 0 10px; opacity: 0.6;">× ${item.quantity}</span>
+                                    <span class="cart-item-remove"><i class="fas fa-trash"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                cartItemsContainer.innerHTML = itemsHTML;
+                cartTotal.textContent = `$${total.toFixed(2)}`;
+                
+                // Add event listeners to remove buttons
+                document.querySelectorAll('.cart-item-remove').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const itemId = this.closest('.cart-item').getAttribute('data-id');
+                        removeFromCart(itemId);
+                    });
+                });
+            }
+            
+            function removeFromCart(id) {
+                cart = cart.filter(item => item.id !== id);
+                updateCartCount();
+                renderCartItems();
+            }
+            
+            function checkout() {
+                if (cart.length === 0) {
+                    alert('Your neural cart is empty. Please add some knowledge packages first.');
+                    return;
+                }
+                
+                const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                alert(`Quantum checkout initiated!\n\nTotal: $${total.toFixed(2)}\n\nThank you for your neural transaction. Your knowledge packages are being downloaded to your consciousness.`);
+                
+                // Clear cart
+                cart = [];
+                updateCartCount();
+                closeCartModalFunc();
+            }
+            
+            function searchBooks() {
+                const query = searchInput.value.trim().toLowerCase();
+                
+                if (query === '') {
+                    alert('Please enter a quantum search query');
+                    return;
+                }
+                
+                alert(`Searching our neural network for: "${query}"\n\nThis functionality would display results in a fully implemented quantum system.`);
+                searchInput.value = '';
+            }
             
             // Background animation on scroll
             window.addEventListener('scroll', function() {
                 const scrollPosition = window.scrollY;
                 const hero = document.querySelector('.hero');
-                hero.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
+                if (hero) {
+                    hero.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
+                }
                 
                 const shapes = document.querySelectorAll('.shape');
                 shapes.forEach(shape => {
                     shape.style.transform = `translate(${scrollPosition * 0.05}px, ${scrollPosition * 0.05}px)`;
                 });
+            });
+            
+            // Close modal when clicking outside
+            window.addEventListener('click', function(e) {
+                if (e.target === cartModal) {
+                    closeCartModalFunc();
+                }
             });
         });
     </script>
