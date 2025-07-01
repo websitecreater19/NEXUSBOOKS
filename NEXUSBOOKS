@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusBooks - Futuristic E-Book Experience</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-blue: #0ff0fc;
+            --electric-purple: #c724f1;
+            --cyber-pink: #ff2a6d;
+            --matrix-green: #00ff9d;
+            --void-black: #0d0221;
+            --hologram-white: rgba(255, 255, 255, 0.9);
+            --glow: 0 0 10px rgba(15, 240, 252, 0.7);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: var(--void-black);
+            color: var(--hologram-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        header {
+            background: rgba(13, 2, 33, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(15, 240, 252, 0.2);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Syne', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--neon-blue), var(--electric-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: flex;
+            align-items: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .logo i {
+            margin-right: 12px;
+            filter: drop-shadow(var(--glow));
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: var(--hologram-white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+        
+        nav ul li a:hover {
+            color: var(--neon-blue);
+            text-shadow: var(--glow);
+        }
+        
+        nav ul li a i {
+            margin-right: 8px;
+        }
+        
+        .cart-count {
+            background: var(--cyber-pink);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            margin-left: 6px;
+        }
+        
+        .hero {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, rgba(15, 240, 252, 0.15) 0%, transparent 50%);
+            z-index: -1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+        }
+        
+        .hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            background: linear-gradient(45deg, var(--hologram-white), var(--neon-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-transform: uppercase;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+        
+        .search-bar {
+            display: flex;
+            max-width: 600px;
+            margin-top: 2rem;
+            position: relative;
+        }
+        
+        .search-bar input {
+            flex: 1;
+            padding: 1.2rem 1.5rem;
+            border: 1px solid rgba(15, 240, 252, 0.3);
+            border-radius: 50px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+        
+        .search-bar input:focus {
+            outline: none;
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 15px rgba(15, 240, 252, 0.4);
+        }
+        
+        .search-bar input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .search-bar button {
+            background: linear-gradient(45deg, var(--neon-blue), var(--matrix-green));
+            color: var(--void-black);
+            border: none;
+            padding: 0 2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .search-bar button:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 15px rgba(15, 240, 252, 0.6);
+        }
+        
+        .floating-books {
+            position: absolute;
+            right: -100px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            z-index: 1;
+            opacity: 0.7;
+        }
+        
+        .floating-book {
+            width: 150px;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transform: rotate(15deg);
+            transition: all 0.5s ease;
+            filter: saturate(1.2);
+        }
+        
+        .floating-book:hover {
+            transform: rotate(5deg) scale(1.1);
+            opacity: 1;
+            filter: saturate(1.5) brightness(1.2);
+        }
+        
+        .categories {
+            padding: 5rem 0;
+            position: relative;
+        }
+        
+        .categories::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, rgba(15, 240, 252, 0.05), transparent);
+            pointer-events: none;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-family: 'Syne', sans-serif;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--neon-blue), var(--electric-purple), transparent);
+            border-radius: 3px;
+        }
+        
+        .category-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+        
+        .category-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 2rem 1.5rem;
+            width: 200px;
+            text-align: center;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(15, 240, 252, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(15, 240, 252, 0.1) 0%, transparent 70%);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(15, 240, 252, 0.2);
+            border-color: rgba(15, 240, 252, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .category-card:hover::before {
+            opacity: 1;
+            transform: rotate(45deg) translate(10%, 10%);
+        }
+        
+        .category-card i {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, var(--neon-blue), var(--matrix-green));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .category-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .featured-books {
+            padding: 5rem 0;
+            position: relative;
+        }
+        
+        .featured-books::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(199, 36, 241, 0.03), transparent);
+            pointer-events: none;
+        }
+        
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .book-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(15, 240, 252, 0.1);
+            position: relative;
+        }
+        
+        .book-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(15, 240, 252, 0.3);
+            border-color: rgba(15, 240, 252, 0.4);
+        }
+        
+        .book-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(15, 240, 252, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .book-card:hover::before {
+            opacity: 1;
+        }
+        
+        .book-cover {
+            height: 350px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .book-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+        
+        .book-card:hover .book-cover img {
+            transform: scale(1.08);
+        }
+        
+        .book-cover::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to top, rgba(13, 2, 33, 0.9), transparent);
+        }
+        
+        .book-info {
+            padding: 1.8rem;
+            position: relative;
+        }
+        
+        .book-title {
+            font-weight: 700;
+            margin-bottom: 0.7rem;
+            font-size: 1.3rem;
+            font-family: 'Syne', sans-serif;
+        }
+        
+        .book-author {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        
+        .book-price {
+            font-weight: 700;
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            display: block;
+            background: linear-gradient(45deg, var(--matrix-green), var(--neon-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .add-to-cart {
+            background: linear-gradient(45deg, var(--electric-purple), var(--cyber-pink));
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            width: 100%;
+            cursor: pointer;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .add-to-cart:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(199, 36, 241, 0.4);
+        }
+        
+        .add-to-cart i {
+            transition: transform 0.3s ease;
+        }
+        
+        .add-to-cart:hover i {
+            transform: translateX(3px);
+        }
+        
+        footer {
+            background: linear-gradient(to bottom, var(--void-black), #0a0118);
+            padding: 5rem 0 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--neon-blue), var(--electric-purple), transparent);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-column h3 {
+            font-family: 'Syne', sans-serif;
+            margin-bottom: 1.8rem;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--neon-blue), transparent);
+        }
+        
+        .footer-column p {
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .footer-column ul li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--neon-blue);
+        }
+        
+        .footer-column ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--neon-blue);
+            transform: translateX(5px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            color: var(--void-black);
+            background: linear-gradient(45deg, var(--neon-blue), var(--matrix-green));
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(15, 240, 252, 0.4);
+        }
+        
+        .newsletter-form {
+            margin-top: 1.5rem;
+        }
+        
+        .newsletter-form input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: none;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            margin-bottom: 1rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        .newsletter-form input:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(15, 240, 252, 0.3);
+        }
+        
+        .newsletter-form button {
+            background: linear-gradient(45deg, var(--electric-purple), var(--cyber-pink));
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            width: 100%;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .newsletter-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(199, 36, 241, 0.4);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(15, 240, 252, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+        
+        .floating-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: -1;
+        }
+        
+        .shape {
+            position: absolute;
+            opacity: 0.1;
+            filter: blur(30px);
+        }
+        
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            background: var(--neon-blue);
+            border-radius: 50%;
+            top: 10%;
+            left: 5%;
+            animation: float 15s infinite ease-in-out;
+        }
+        
+        .shape-2 {
+            width: 400px;
+            height: 400px;
+            background: var(--electric-purple);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            bottom: 10%;
+            right: 5%;
+            animation: float 18s infinite ease-in-out reverse;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+            50% {
+                transform: translate(50px, 50px);
+            }
+        }
+        
+        @media (max-width: 1200px) {
+            .floating-books {
+                right: -150px;
+                opacity: 0.5;
+            }
+            
+            .floating-book {
+                width: 120px;
+                height: 160px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+            
+            .floating-books {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .category-card {
+                width: 160px;
+                padding: 1.5rem 1rem;
+            }
+            
+            .book-grid {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                height: auto;
+                padding: 6rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .search-bar {
+                flex-direction: column;
+            }
+            
+            .search-bar input {
+                border-radius: 50px;
+                margin-bottom: 1rem;
+            }
+            
+            .search-bar button {
+                position: static;
+                border-radius: 50px;
+                padding: 0.8rem;
+                justify-content: center;
+            }
+            
+            .category-card {
+                width: 140px;
+                padding: 1.2rem 0.8rem;
+            }
+            
+            .category-card i {
+                font-size: 2rem;
+            }
+            
+            .book-cover {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+    </div>
+    
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-atom"></i>
+                <span>NexusBooks</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#"><i class="fas fa-tags"></i> Categories</a></li>
+                    <li><a href="#"><i class="fas fa-fire"></i> Bestsellers</a></li>
+                    <li><a href="#"><i class="fas fa-bolt"></i> New Releases</a></li>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i> Cart <span class="cart-count">0</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Dive Into Digital Dimensions</h1>
+                <p>Explore our curated collection of futuristic reads that will transport your mind to new realities. Instant access, infinite possibilities.</p>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for quantum knowledge...">
+                    <button><i class="fas fa-search"></i> Explore</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="floating-books">
+            <div class="floating-book" style="background-image: url('https://m.media-amazon.com/images/I/71X1p4TGlxL._AC_UF1000,1000_QL80_.jpg');"></div>
+            <div class="floating-book" style="background-image: url('https://m.media-amazon.com/images/I/81cpDaCJJCL._AC_UF1000,1000_QL80_.jpg');"></div>
+            <div class="floating-book" style="background-image: url('https://m.media-amazon.com/images/I/81bsw6fnUiL._AC_UF1000,1000_QL80_.jpg');"></div>
+        </div>
+    </section>
+    
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Knowledge Dimensions</h2>
+            <div class="category-list">
+                <div class="category-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Neuro Science</h3>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Quantum Physics</h3>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-dna"></i>
+                    <h3>Bio Tech</h3>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>AI Futures</h3>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Cyber Culture</h3>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-chart-network"></i>
+                    <h3>Data Realms</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="featured-books">
+        <div class="container">
+            <h2 class="section-title">Holographic Picks</h2>
+            <div class="book-grid">
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="https://m.media-amazon.com/images/I/81bsw6fnUiL._AC_UF1000,1000_QL80_.jpg" alt="The Silent Patient">
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">The Silent Patient</h3>
+                        <p class="book-author">By Alex Michaelides</p>
+                        <span class="book-price">$12.99</span>
+                        <button class="add-to-cart"><i class="fas fa-plus"></i> Add to Neural Cart</button>
+                    </div>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="https://m.media-amazon.com/images/I/81cpDaCJJCL._AC_UF1000,1000_QL80_.jpg" alt="The Creative Act: A Way of Being">
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">The Creative Act</h3>
+                        <p class="book-author">By Rick Rubin</p>
+                        <span class="book-price">$16.99</span>
+                        <button class="add-to-cart"><i class="fas fa-plus"></i> Add to Neural Cart</button>
+                    </div>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="https://m.media-amazon.com/images/I/71X1p4TGlxL._AC_UF1000,1000_QL80_.jpg" alt="The Midnight Library">
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">The Midnight Library</h3>
+                        <p class="book-author">By Matt Haig</p>
+                        <span class="book-price">$10.99</span>
+                        <button class="add-to-cart"><i class="fas fa-plus"></i> Add to Neural Cart</button>
+                    </div>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="https://m.media-amazon.com/images/I/81WZ6QvGZ2L._AC_UF1000,1000_QL80_.jpg" alt="Educated">
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">Educated</h3>
+                        <p class="book-author">By Tara Westover</p>
+                        <span class="book-price">$13.99</span>
+                        <button class="add-to-cart"><i class="fas fa-plus"></i> Add to Neural Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>NexusBooks</h3>
+                    <p>Pushing the boundaries of digital knowledge since 2023. We curate only the most forward-thinking content for tomorrow's minds.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quantum Links</h3>
+                    <ul>
+                        <li><a href="#">Wormhole Home</a></li>
+                        <li><a href="#">Neural Network</a></li>
+                        <li><a href="#">Temporal Archives</a></li>
+                        <li><a href="#">Holographic Support</a></li>
+                        <li><a href="#">Dimensional Portal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Data Streams</h3>
+                    <ul>
+                        <li><a href="#">Quantum FAQ</a></li>
+                        <li><a href="#">Download Protocols</a></li>
+                        <li><a href="#">Neural Returns</a></li>
+                        <li><a href="#">Crypto Payments</a></li>
+                        <li><a href="#">Privacy Matrix</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Neural Network</h3>
+                    <p>Join our quantum newsletter for interdimensional updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your neuro-email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 NexusBooks. All dimensions reserved. Operates in 11/10 spacetime continuums.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add to cart animation
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            const cartCount = document.querySelector('.cart-count');
+            
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Store original content
+                    const originalHTML = this.innerHTML;
+                    
+                    // Animation
+                    this.innerHTML = '<i class="fas fa-check"></i> Added to Neural Storage';
+                    this.style.background = 'linear-gradient(45deg, var(--matrix-green), var(--neon-blue))';
+                    
+                    // Update cart count
+                    let count = parseInt(cartCount.textContent) || 0;
+                    count++;
+                    cartCount.textContent = count;
+                    
+                    // Pulsate cart count
+                    cartCount.style.transform = 'scale(1.3)';
+                    setTimeout(() => {
+                        cartCount.style.transform = 'scale(1)';
+                    }, 300);
+                    
+                    // Reset button after delay
+                    setTimeout(() => {
+                        this.innerHTML = originalHTML;
+                        this.style.background = 'linear-gradient(45deg, var(--electric-purple), var(--cyber-pink))';
+                    }, 2000);
+                });
+            });
+            
+            // Floating books animation
+            const floatingBooks = document.querySelectorAll('.floating-book');
+            floatingBooks.forEach((book, index) => {
+                // Staggered animation
+                book.style.animation = `float ${8 + index * 2}s infinite ease-in-out ${index * 0.5}s`;
+            });
+            
+            // Background animation on scroll
+            window.addEventListener('scroll', function() {
+                const scrollPosition = window.scrollY;
+                const hero = document.querySelector('.hero');
+                hero.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
+                
+                const shapes = document.querySelectorAll('.shape');
+                shapes.forEach(shape => {
+                    shape.style.transform = `translate(${scrollPosition * 0.05}px, ${scrollPosition * 0.05}px)`;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
